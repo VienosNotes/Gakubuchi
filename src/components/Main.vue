@@ -3,7 +3,7 @@
   <div class="main-frame">
 
     <div id="orig-image-container" class="image-container">
-      <canvas id="square-canvas" width="500" height="500"/>
+      <canvas id="square-canvas" width="500" height="500"></canvas>
     </div>
     <div id="buttons-container">
       <label id="open-button" class="label-button">
@@ -34,7 +34,7 @@
 
 <script>
 import BlankImage from '../assets/test.jpg';
-import {Compact} from 'vue-color';
+import { Compact } from 'vue-color';
 import Checkbox from 'vue-material-checkbox';
 
 const sp_threshold = 1500; // maximum smartphone screen width
@@ -42,7 +42,7 @@ const frame_padding_ratio = 0.04;
 const frame_size = 1080;
 const shadow_color = '#00000066';
 const shadow_offset = 0.01;
-const shadow_blur = 0.02
+const shadow_blur = 0.02;
 
 export default {
   name: 'Main',
@@ -64,12 +64,10 @@ export default {
   watch: {
     background() {
       let canvas = this.origCanvas;
-      console.log(this.background);
       this.drawImage(this.origCtx, this.image, canvas.width, canvas.height);
     },
     shadow() {
       let canvas = this.origCanvas;
-      console.log(this.background);
       this.drawImage(this.origCtx, this.image, canvas.width, canvas.height);
     }
   },
@@ -162,13 +160,9 @@ export default {
           let now = new Date(Date.now());
           anchor.download = `gakubuchi_${now.getFullYear()}${now.getMonth()}${now.getDate()}_${now.getHours()}${now.getMinutes()}${now.getSeconds()}.png`;
           anchor.click();
-          this.applyProcessingStyle(false);
           URL.revokeObjectURL(url);
         });
       }, 500);
-    },
-    applyProcessingStyle(isProcessing) {
-      this.isProcessing = isProcessing;
     },
   },
   computed: {
@@ -188,23 +182,12 @@ export default {
       // noinspection JSValidateTypes
       return document.getElementById('square-canvas');
     },
-    /**
-     * Image size [width, height]
-     * @returns {number[]}
-     */
-    origSize() {
-      if (!this.image) {
-        return [0, 0];
-      }
-      return [this.image.width, this.image.height];
-    }
   }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus">
 $themeColor = #800000
-@import '../assets/slider.css'
 
 $threshold = 1500
 
@@ -255,7 +238,7 @@ label input
   display flex
   justify-content center
   align-items top
-  margin 20px
+  margin 10px
 
 .button-icon
   vertical-align bottom

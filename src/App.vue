@@ -2,9 +2,9 @@
   <div id="app">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <img src="./assets/gakubuchi.svg" width="250" alt="logo" id="logo">
+    <img src="./assets/logo.png" width="250" alt="logo" id="logo">
     <Main />
-    <div id="caption">このアプリはブラウザの機能のみで動作するため、画像がサーバにアップロードされることはありません。</div>
+    <div id="caption">このアプリはブラウザの機能のみで動作するため、<br>画像がサーバにアップロードされることはありません。<br> This app works on only your browser then it will not upload the chosen image uploaded to any servers.</div>
     <footer id="copyright">Gakubuchi v1.0, Created by <a href="https://twitter.com/VienosNotes">@VienosNotes</a>, <a href="https://github.com/VienosNotes/Gakubuchi">Documents in Github</a> </footer>
   </div>
 </template>
@@ -30,16 +30,6 @@ export default {
   color Gray
   font-family 'Oswald', sans-serif
 
-h1
-  font-family 'Amatic SC', cursive
-  font-size 70px
-  margin 0
-
-  @media screen and (max-width: 1500px)
-    font-family 'Amatic SC', cursive
-    font-size 40px
-    margin 0
-
 
 #logo-highlight
   color Orange
@@ -62,4 +52,6 @@ h1
   @media screen and (max-width: 1500px)
       font-size x-small
 
+#logo
+  margin 10px
 </style>
